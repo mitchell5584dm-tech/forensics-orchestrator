@@ -55,9 +55,7 @@ def trigger_hash_validator(target: TargetModel):
             "raw_output": result.stdout.strip().split('\n')
         }
     except subprocess.CalledProcessError as e:
-        raise HTTPException(status_code=500, detail=f"Execution Failed: {e.stderr}")from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import subprocess
+        raise HTTPException(status_code=500, detail=f"Execution Failed: {e.stderr}")
 
 app = FastAPI(
     title="Security Operations Forensics Toolkit - API", 
